@@ -37,7 +37,7 @@ def data_to_rgb(data, baseval, interval, round_digits=0):
     datarange = data.max() - data.min()
 
     if _range_check(datarange):
-        raise ValueError("Data of {} larger than 256 ** 3".format(datarange))
+        raise ValueError("Data of {} larger than 256 ** 3".format(datarange, data.max(), data.min()))
 
     rgb = np.zeros((3, rows, cols), dtype=np.uint8)
 
